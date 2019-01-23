@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%-30(%d{HH:mm:ss.SSS} | %highlight(%-5level) |) [%magenta(%thread)] [%green(%X{correlationId})] %logger{0} - %msg%n</pattern>
+            </encoder>
+            <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+                <evaluator class="com.example.logginglevel.HeaderValueLogLevelEvaluatorFilter"/>
+                <OnMismatch>DENY</OnMismatch>
+                <OnMatch>NEUTRAL</OnMatch>
+            </filter>
+        </appender>
+
+        <root level="DEBUG" additivity="false">
+            <appender-ref ref="STDOUT"/>
+        </root>
+        <statusListener class="ch.qos.logback.core.status.NopStatusListener"/>
+</configuration>
