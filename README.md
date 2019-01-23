@@ -1,6 +1,6 @@
-#Spring Logging Level Changer
+# Spring Logging Level Changer
 
-##Overview
+## Overview
 
 Ability to change the logging level for a specific thread by passing the minimum logging level as an HTTP header. 
 
